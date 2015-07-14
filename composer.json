@@ -3,7 +3,8 @@
     "type": "library",
     "require": {
         "php": ">=5.5.0",
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "~6.0",
+        "phpunit/phpunit": "~4.7"
     },
     "autoload": {
         "psr-4": {

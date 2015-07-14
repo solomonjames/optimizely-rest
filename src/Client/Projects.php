@@ -24,7 +24,7 @@ class Projects
         $uri     = 'projects/';
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
