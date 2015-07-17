@@ -25,7 +25,7 @@ class Goals
         $uri     = sprintf('projects/%s/goals/', $projectId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -40,7 +40,7 @@ class Goals
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -53,7 +53,7 @@ class Goals
         $uri     = sprintf('goals/%s/', $goalId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -68,7 +68,7 @@ class Goals
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -81,6 +81,6 @@ class Goals
         $uri     = sprintf('goals/%s', $goalId);
         $request = $this->createRequest('DELETE', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 }

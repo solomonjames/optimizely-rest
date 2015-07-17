@@ -15,7 +15,7 @@ class EntityBag implements \IteratorAggregate, \Countable
     protected $data;
 
     /**
-     * Constructor, add that data
+     * Public Constructor, add that data
      *
      * @param array $data
      */

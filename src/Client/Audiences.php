@@ -23,7 +23,7 @@ class Audiences
         $uri     = sprintf('projects/%s/audiences/', $projectId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -38,7 +38,7 @@ class Audiences
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -51,7 +51,7 @@ class Audiences
         $uri     = sprintf('audiences/%s/', $audienceId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -66,7 +66,7 @@ class Audiences
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**

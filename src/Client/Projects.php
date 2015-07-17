@@ -39,7 +39,7 @@ class Projects
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -52,7 +52,7 @@ class Projects
         $uri     = sprintf('projects/%s/', $projectId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -67,7 +67,7 @@ class Projects
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**

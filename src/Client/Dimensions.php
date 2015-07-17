@@ -24,7 +24,7 @@ class Dimensions
         $uri     = sprintf('projects/%s/dimensions/', $projectId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -39,7 +39,7 @@ class Dimensions
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -52,7 +52,7 @@ class Dimensions
         $uri     = sprintf('dimensions/%s/', $dimensionId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -67,7 +67,7 @@ class Dimensions
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -84,6 +84,6 @@ class Dimensions
         $uri     = sprintf('dimensions/%s', $dimensionId);
         $request = $this->createRequest('DELETE', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 }

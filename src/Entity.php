@@ -3,12 +3,20 @@
 namespace Optimizely;
 
 /**
- *
+ * This is a basic interface to any given item from the API.
  */
 class Entity
 {
+    /**
+     * @var Entity\EntityBag
+     */
     private $entityBag;
 
+    /**
+     * Public Constructor
+     *
+     * @param Entity\EntityBag $entityBag
+     */
     public function __construct(Entity\EntityBag $entityBag)
     {
         $this->entityBag = $entityBag;

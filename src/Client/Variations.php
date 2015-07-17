@@ -26,7 +26,7 @@ class Variations
         $uri     = sprintf('experiments/%s/variations/', $experimentId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -41,7 +41,7 @@ class Variations
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -54,7 +54,7 @@ class Variations
         $uri     = sprintf('schedules/%s', $scheduleId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -69,7 +69,7 @@ class Variations
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -82,6 +82,6 @@ class Variations
         $uri     = sprintf('variations/%s', $scheduleId);
         $request = $this->createRequest('DELETE', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 }

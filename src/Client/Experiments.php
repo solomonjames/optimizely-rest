@@ -25,7 +25,7 @@ class Experiments
         $uri     = sprintf('projects/%s/experiments/', $projectId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -42,7 +42,7 @@ class Experiments
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -55,7 +55,7 @@ class Experiments
         $uri     = sprintf('experiments/%s/', $experimentId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -70,7 +70,7 @@ class Experiments
 
         $request->setBody(new MultipartStream($data));
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -83,7 +83,7 @@ class Experiments
         $uri     = sprintf('experiments/%s', $experimentId);
         $request = $this->createRequest('DELETE', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -98,7 +98,7 @@ class Experiments
         $uri     = sprintf('experiments/%s/results', $experimentId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 
     /**
@@ -114,6 +114,6 @@ class Experiments
         $uri     = sprintf('experiments/%s/stats', $experimentId);
         $request = $this->createRequest('GET', $uri);
 
-        return $this->client->send($request);
+        return $this->handleRequest($request);
     }
 }
